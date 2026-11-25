@@ -1,0 +1,1308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Brewed & Bowls | Cafe Wardha</title>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- ICONS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --brown:#2b1d16;
+    --brown-light:#493126;
+    --cream:#f8f3eb;
+    --gold:#c7955b;
+    --text:#35251d;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+    font-family:'DM Sans',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+}
+
+h1,h2,h3,h4,h5,.brand {
+    font-family:'Playfair Display',serif;
+}
+
+.section-padding { padding:90px 0; }
+
+.section-tag {
+    color:#a77743;
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.section-title {
+    font-size:clamp(32px,4vw,48px);
+    margin:15px 0;
+}
+
+.section-description {
+    color:#78665a;
+    max-width:600px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background:var(--brown);
+    padding:16px 0;
+}
+
+.brand {
+    font-size:26px;
+    color:white!important;
+    font-weight:700;
+}
+
+.brand span { color:var(--gold); }
+
+.navbar-nav .nav-link {
+    color:#eee2d5;
+    margin:0 6px;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover { color:var(--gold); }
+
+.order-btn,.btn-gold {
+    background:var(--gold);
+    color:var(--brown);
+    border-radius:40px;
+    padding:12px 23px;
+    font-weight:700;
+    border:none;
+    text-decoration:none;
+    display:inline-block;
+    transition:.3s;
+}
+
+.order-btn:hover,.btn-gold:hover {
+    background:white;
+    color:var(--brown);
+    transform:translateY(-3px);
+}
+
+/* HERO */
+
+.hero {
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(35,23,17,.95),rgba(35,23,17,.65),rgba(35,23,17,.15)),
+    url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content { padding:100px 0; }
+
+.hero-tag {
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:13px;
+}
+
+.hero h1 {
+    font-size:clamp(48px,7vw,85px);
+    line-height:1.1;
+    margin:20px 0;
+}
+
+.hero h1 span {
+    color:var(--gold);
+    font-style:italic;
+}
+
+.hero p {
+    color:#e5d8cc;
+    max-width:500px;
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* ABOUT */
+
+.about-img {
+    height:430px;
+    width:100%;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+.about-box {
+    padding:24px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 10px 35px #0000000b;
+}
+
+.about-icon {
+    font-size:28px;
+    color:var(--gold);
+}
+
+/* MENU */
+
+.menu-section { background:#eee5d9; }
+
+.menu-card {
+    background:white;
+    border:0;
+    border-radius:18px;
+    overflow:hidden;
+    height:100%;
+    transition:.35s;
+}
+
+.menu-card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px #2b1d1620;
+}
+
+.menu-image-wrap { overflow:hidden; }
+
+.menu-card img {
+    width:100%;
+    height:245px;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.menu-card:hover img { transform:scale(1.06); }
+
+.menu-card .card-body { padding:24px; }
+
+.menu-card h5 { font-size:23px; }
+
+.menu-card p {
+    color:#817166;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.menu-price {
+    color:#a77743;
+    font-weight:700;
+}
+
+/* SPECIAL */
+
+.special-section {
+    background:var(--brown);
+    color:white;
+}
+
+.special-img {
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.special-section p {
+    color:#d6c5b6;
+    line-height:1.9;
+}
+
+.special-list {
+    list-style:none;
+    padding:0;
+}
+
+.special-list li { margin:15px 0; }
+
+.special-list i {
+    color:var(--gold);
+    margin-right:12px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials-section { background:#fffaf4; }
+
+.review-card {
+    background:white;
+    padding:32px;
+    height:100%;
+    border-radius:18px;
+    border:1px solid #eee3d7;
+    transition:.35s;
+}
+
+.review-card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px #2b1d1614;
+}
+
+.featured-review {
+    background:var(--brown);
+    color:white;
+}
+
+.stars {
+    color:#d5a14e;
+    letter-spacing:4px;
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.review-text {
+    line-height:1.8;
+    color:#817166;
+    font-style:italic;
+    min-height:115px;
+}
+
+.featured-review .review-text { color:#e4d4c5; }
+
+.review-user {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:20px;
+}
+
+.review-avatar {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--brown);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.review-user h6 { margin-bottom:3px; }
+
+.review-user small { color:#a18b79; }
+
+.btn-outline-brown {
+    display:inline-block;
+    padding:12px 25px;
+    border:1px solid var(--brown);
+    color:var(--brown);
+    text-decoration:none;
+    border-radius:40px;
+    transition:.3s;
+}
+
+.btn-outline-brown:hover {
+    background:var(--brown);
+    color:white;
+}
+
+/* GALLERY */
+
+.gallery-section { background:var(--cream); }
+
+.gallery-item {
+    position:relative;
+    height:280px;
+    overflow:hidden;
+    border-radius:16px;
+}
+
+.gallery-item img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img { transform:scale(1.1); }
+
+.gallery-overlay {
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:end;
+    padding:22px;
+    color:white;
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    background:linear-gradient(transparent,rgba(30,20,14,.8));
+    opacity:0;
+    transition:.3s;
+}
+
+.gallery-item:hover .gallery-overlay { opacity:1; }
+
+/* OFFER */
+
+.offer-section {
+    background:
+    linear-gradient(#2b1d16d9,#2b1d16d9),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1500&q=85');
+    background-size:cover;
+    background-position:center;
+    padding:90px 20px;
+    color:white;
+}
+
+.offer-tag {
+    letter-spacing:4px;
+    font-size:12px;
+    color:var(--gold);
+    font-weight:700;
+}
+
+.offer-content h2 {
+    font-size:clamp(38px,5vw,65px);
+    margin:20px 0;
+}
+
+.offer-content h2 span {
+    color:var(--gold);
+    font-style:italic;
+}
+
+.offer-content p {
+    max-width:550px;
+    margin:0 auto 30px;
+    color:#e3d4c7;
+    line-height:1.8;
+}
+
+/* EXPERIENCE */
+
+.experience-card {
+    text-align:center;
+    padding:30px 20px;
+    transition:.3s;
+}
+
+.experience-card:hover { transform:translateY(-6px); }
+
+.experience-card i {
+    font-size:35px;
+    color:var(--gold);
+    margin-bottom:18px;
+}
+
+.experience-card p {
+    color:#817166;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* FAQ */
+
+.faq-section { background:#fffaf4; }
+
+.accordion-item {
+    border:1px solid #e9ddd0;
+    border-radius:10px!important;
+    overflow:hidden;
+    margin-bottom:12px;
+}
+
+.accordion-button {
+    background:white;
+    color:var(--brown);
+    font-weight:600;
+    padding:20px;
+}
+
+.accordion-button:not(.collapsed) {
+    background:#eee5d9;
+    color:var(--brown);
+    box-shadow:none;
+}
+
+.accordion-button:focus {
+    box-shadow:none;
+}
+
+.accordion-body {
+    line-height:1.8;
+    color:#78665a;
+}
+
+/* CONTACT */
+
+.contact-section { background:#eee5d9; }
+
+.contact-box {
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    height:100%;
+}
+
+.contact-item {
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.contact-item i {
+    color:var(--gold);
+    font-size:22px;
+}
+
+.contact-item p {
+    color:#817166;
+    font-size:14px;
+    margin:0;
+    line-height:1.7;
+}
+
+.map-box {
+    width:100%;
+    height:100%;
+    min-height:350px;
+    border:0;
+    border-radius:18px;
+}
+
+/* FOOTER */
+
+footer {
+    background:#20150f;
+    color:white;
+    padding:55px 0 20px;
+}
+
+footer p { color:#bca99a; }
+
+footer a {
+    color:#d7c4b4;
+    text-decoration:none;
+}
+
+footer a:hover { color:var(--gold); }
+
+.social-links a {
+    width:40px;
+    height:40px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    background:#493126;
+    color:white;
+    border-radius:50%;
+    margin-right:8px;
+    transition:.3s;
+}
+
+.social-links a:hover {
+    background:var(--gold);
+    color:var(--brown);
+}
+
+/* WHATSAPP */
+
+.whatsapp-float {
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:999;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    box-shadow:0 5px 20px #0003;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.whatsapp-float:hover {
+    background:#128C7E;
+    color:white;
+    transform:scale(1.08);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.active {
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px) {
+    .navbar-nav { padding:15px 0; }
+    .hero { min-height:75vh; }
+    .about-img { height:350px; margin-bottom:20px; }
+}
+
+@media(max-width:767px) {
+    .section-padding { padding:65px 0; }
+    .review-card { padding:25px; }
+    .gallery-item { height:240px; }
+    .gallery-overlay { opacity:1; }
+    .offer-section { padding:65px 20px; }
+    .special-img { height:300px; margin-bottom:20px; }
+    .contact-box { padding:25px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        scroll-behavior:auto!important;
+        transition:none!important;
+        animation:none!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container">
+
+<a class="navbar-brand brand" href="#home">
+Brewed <span>&</span> Bowls
+</a>
+
+<button class="navbar-toggler" type="button"
+data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarMenu">
+
+<ul class="navbar-nav ms-auto align-items-lg-center">
+
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="#special">Specials</a></li>
+<li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+<li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+<a href="#menu" class="order-btn">Explore Menu</a>
+</li>
+
+</ul>
+</div>
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+
+<span class="hero-tag">COFFEE • COMFORT • GOOD VIBES</span>
+
+<h1>Sip. Savour.<br><span>Repeat.</span></h1>
+
+<p>
+Your favourite coffee spot for slow mornings,
+delicious drinks and unforgettable moments.
+Come for the coffee, stay for the vibe.
+</p>
+
+<a href="#menu" class="btn-gold me-2 mt-3">Discover Our Menu</a>
+<a href="#about" class="btn btn-outline-light rounded-pill mt-3 px-4 py-3">Our Story</a>
+
+</div>
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section-padding" id="about">
+<div class="container">
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+<img class="about-img"
+src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=85"
+alt="Fresh coffee">
+</div>
+
+<div class="col-lg-6">
+
+<span class="section-tag">A LITTLE ABOUT US</span>
+
+<h2 class="section-title">More than coffee,<br>it's a feeling.</h2>
+
+<p class="text-secondary" style="line-height:1.9">
+Brewed & Bowls is a place where every cup brings comfort
+and every visit creates a little happiness. Whether you're
+meeting friends or taking a break from your busy day,
+there's always a place for you.
+</p>
+
+<div class="row g-3 mt-3">
+
+<div class="col-6">
+<div class="about-box">
+<i class="bi bi-cup-hot about-icon"></i>
+<h6 class="mt-3">Freshly Brewed</h6>
+<small class="text-secondary">Coffee made with love</small>
+</div>
+</div>
+
+<div class="col-6">
+<div class="about-box">
+<i class="bi bi-heart about-icon"></i>
+<h6 class="mt-3">Made With Love</h6>
+<small class="text-secondary">Moments worth sharing</small>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- MENU -->
+
+<section class="section-padding menu-section" id="menu">
+<div class="container">
+
+<div class="text-center mb-5">
+<span class="section-tag">OUR FAVOURITES</span>
+<h2 class="section-title">Explore Our Menu</h2>
+<p class="section-description">
+From refreshing drinks to delicious bites,
+find something that makes your day better.
+</p>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+<div class="card menu-card">
+<div class="menu-image-wrap">
+<img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=85" alt="Iced coffee">
+</div>
+<div class="card-body">
+<h5>Iced Coffee</h5>
+<p>Smooth, chilled coffee for your perfect refreshment.</p>
+<span class="menu-price">Explore</span>
+</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card menu-card">
+<div class="menu-image-wrap">
+<img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=700&q=85" alt="Milkshake">
+</div>
+<div class="card-body">
+<h5>Milkshakes</h5>
+<p>Creamy, delicious and full of flavour.</p>
+<span class="menu-price">Explore</span>
+</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card menu-card">
+<div class="menu-image-wrap">
+<img src="https://images.unsplash.com/photo-1517673400267-0251440c45dc?auto=format&fit=crop&w=700&q=85" alt="Hot coffee">
+</div>
+<div class="card-body">
+<h5>Hot Coffee</h5>
+<p>Warm cups, comforting flavours and cozy moments.</p>
+<span class="menu-price">Explore</span>
+</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card menu-card">
+<div class="menu-image-wrap">
+<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=85" alt="Fresh bowl">
+</div>
+<div class="card-body">
+<h5>Fresh Bowls</h5>
+<p>Fresh, colourful and delicious bowl options.</p>
+<span class="menu-price">Explore</span>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="text-center mt-5">
+<a href="#contact" class="btn-gold">Visit Our Cafe</a>
+</div>
+
+</div>
+</section>
+
+
+<!-- SPECIALS -->
+
+<section class="section-padding special-section" id="special">
+<div class="container">
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+<img class="special-img"
+src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1000&q=85"
+alt="Cafe coffee experience">
+</div>
+
+<div class="col-lg-6">
+
+<span class="section-tag">YOUR DAILY HAPPY PLACE</span>
+
+<h2 class="section-title">Good things<br>happen over coffee.</h2>
+
+<p>
+Take a break from the ordinary. Enjoy your favourite drink,
+share a laugh and make memories with your favourite people.
+</p>
+
+<ul class="special-list">
+<li><i class="bi bi-check-circle-fill"></i>A cozy cafe experience</li>
+<li><i class="bi bi-check-circle-fill"></i>Delicious beverages and bites</li>
+<li><i class="bi bi-check-circle-fill"></i>Perfect for friends and coffee dates</li>
+<li><i class="bi bi-check-circle-fill"></i>Your everyday coffee destination</li>
+</ul>
+
+<a href="#contact" class="btn-gold mt-3">Find Us</a>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="section-padding testimonials-section" id="reviews">
+<div class="container">
+
+<div class="text-center mb-5">
+<span class="section-tag">CUSTOMER LOVE</span>
+<h2 class="section-title">Moments Worth Sharing</h2>
+<p class="section-description">
+Good coffee tastes even better when shared with good people.
+</p>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p class="review-text">
+"A lovely place to spend time with friends.
+The cafe atmosphere feels cozy and welcoming."
+</p>
+<div class="review-user">
+<div class="review-avatar">A</div>
+<div>
+<h6>Customer</h6>
+<small>Sample testimonial</small>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="review-card featured-review">
+<div class="stars">★★★★★</div>
+<p class="review-text">
+"Perfect coffee break spot! Beautiful ambience
+and a great place to catch up with your favourite people."
+</p>
+<div class="review-user">
+<div class="review-avatar">S</div>
+<div>
+<h6>Customer</h6>
+<small>Sample testimonial</small>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p class="review-text">
+"Loved the cafe vibe. A perfect place to relax,
+enjoy your drink and make memories."
+</p>
+<div class="review-user">
+<div class="review-avatar">R</div>
+<div>
+<h6>Customer</h6>
+<small>Sample testimonial</small>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="text-center mt-4">
+<a href="https://www.google.com/search?q=Brewed+and+Bowls+Wardha+reviews"
+target="_blank" class="btn-outline-brown">
+<i class="bi bi-google me-2"></i>Read Google Reviews
+</a>
+</div>
+
+</div>
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section-padding gallery-section" id="gallery">
+<div class="container">
+
+<div class="text-center mb-5">
+<span class="section-tag">THE CAFE VIBE</span>
+<h2 class="section-title">A Little Taste of Our World</h2>
+<p class="section-description">
+Coffee, conversations and beautiful moments.
+</p>
+</div>
+
+<div class="row g-3">
+
+<div class="col-md-6 col-lg-4">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" alt="Coffee moments">
+<div class="gallery-overlay">Coffee Moments</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=85" alt="Cafe ambience">
+<div class="gallery-overlay">Cafe Ambience</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=85" alt="Coffee art">
+<div class="gallery-overlay">Coffee Art</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=900&q=85" alt="Coffee and snacks">
+<div class="gallery-overlay">Coffee & Snacks</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=85" alt="Freshly brewed">
+<div class="gallery-overlay">Freshly Brewed</div>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-4">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=85" alt="Cafe interior">
+<div class="gallery-overlay">Good Vibes Only</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- OFFER BANNER -->
+
+<section class="offer-section">
+<div class="container">
+<div class="offer-content text-center">
+
+<span class="offer-tag">YOUR NEXT COFFEE MOMENT</span>
+
+<h2>Make Today a<br><span>Little More Delicious.</span></h2>
+
+<p>
+Good coffee, delicious bites and your favourite people.
+Your perfect cafe moment is waiting.
+</p>
+
+<a href="#contact" class="btn-gold">
+Visit Us Today <i class="bi bi-arrow-right ms-2"></i>
+</a>
+
+</div>
+</div>
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="section-padding">
+<div class="container">
+
+<div class="text-center mb-5">
+<span class="section-tag">WHY VISIT US?</span>
+<h2 class="section-title">Made For Your Moments</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="experience-card">
+<i class="bi bi-cup-hot"></i>
+<h5>Your Coffee Break</h5>
+<p>Take a pause, recharge and enjoy a freshly prepared drink.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="experience-card">
+<i class="bi bi-people"></i>
+<h5>Meet Your People</h5>
+<p>Catch up with friends and create beautiful memories.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="experience-card">
+<i class="bi bi-camera"></i>
+<h5>Moments & Memories</h5>
+<p>Enjoy the atmosphere, good food and little moments of happiness.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section-padding faq-section" id="faq">
+<div class="container">
+
+<div class="text-center mb-5">
+<span class="section-tag">NEED TO KNOW?</span>
+<h2 class="section-title">Frequently Asked Questions</h2>
+</div>
+
+<div class="row justify-content-center">
+<div class="col-lg-8">
+
+<div class="accordion" id="faqAccordion">
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button" type="button"
+data-bs-toggle="collapse" data-bs-target="#faq1">
+Where is Brewed & Bowls located?
+</button>
+</h2>
+<div id="faq1" class="accordion-collapse collapse show"
+data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+We are located at 1st Floor, Indira Market Road,
+opposite Bank of Baroda, Maganwadi, Wardha.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button"
+data-bs-toggle="collapse" data-bs-target="#faq2">
+How can I contact the cafe?
+</button>
+</h2>
+<div id="faq2" class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+You can contact us at +91 99759 59596.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button"
+data-bs-toggle="collapse" data-bs-target="#faq3">
+Where can I see the cafe location?
+</button>
+</h2>
+<div id="faq3" class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+Use the Google Maps location link provided on our website.
+</div>
+</div>
+</div>
+
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" type="button"
+data-bs-toggle="collapse" data-bs-target="#faq4">
+How can I know about the menu?
+</button>
+</h2>
+<div id="faq4" class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+<div class="accordion-body">
+Visit our menu section or contact the cafe directly
+for the latest menu and prices.
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section-padding contact-section" id="contact">
+<div class="container">
+
+<div class="text-center mb-5">
+<span class="section-tag">COME SAY HELLO</span>
+<h2 class="section-title">Find Your Coffee Spot</h2>
+<p class="section-description">
+Your next favourite coffee is waiting for you.
+</p>
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-5">
+<div class="contact-box">
+
+<h3 class="mb-4">Visit Us</h3>
+
+<div class="contact-item">
+<i class="bi bi-geo-alt-fill"></i>
+<div>
+<h6>Our Location</h6>
+<p>
+1st Floor, Indira Market Road, opposite Bank of Baroda,
+Durga Bhawan, Maganwadi, Wardha, Maharashtra 442001
+</p>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="bi bi-telephone-fill"></i>
+<div>
+<h6>Call Us</h6>
+<p>+91 99759 59596</p>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="bi bi-cup-hot-fill"></i>
+<div>
+<h6>Experience</h6>
+<p>Coffee, beverages, bowls and cafe moments.</p>
+</div>
+</div>
+
+<a href="https://www.google.com/maps/search/?api=1&query=Brewed+and+Bowls+Wardha"
+target="_blank" class="btn-gold mt-2">
+<i class="bi bi-map me-2"></i>Get Directions
+</a>
+
+<a href="tel:+919975959596" class="btn-outline-brown mt-2">
+<i class="bi bi-telephone me-2"></i>Call Now
+</a>
+
+</div>
+</div>
+
+<div class="col-lg-7">
+<iframe class="map-box"
+src="https://maps.google.com/maps?q=Brewed%20and%20Bowls%20Wardha&t=&z=15&ie=UTF8&iwloc=&output=embed"
+loading="lazy" allowfullscreen title="Brewed and Bowls map">
+</iframe>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-lg-5">
+<a class="brand text-decoration-none" href="#home">
+Brewed <span>&</span> Bowls
+</a>
+<p class="mt-3">
+Sip, savour and celebrate the little moments.
+Your neighbourhood coffee destination.
+</p>
+</div>
+
+<div class="col-lg-3">
+<h5>Quick Links</h5>
+<div class="d-flex flex-column gap-2 mt-3">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#menu">Menu</a>
+<a href="#reviews">Reviews</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+
+<div class="col-lg-4">
+<h5>Connect With Us</h5>
+<p class="mt-3">
+Come for a coffee and make your day a little better.
+</p>
+
+<div class="social-links">
+<a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+<i class="bi bi-instagram"></i>
+</a>
+<a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+<i class="bi bi-facebook"></i>
+</a>
+<a href="tel:+919975959596" aria-label="Phone">
+<i class="bi bi-telephone"></i>
+</a>
+</div>
+</div>
+
+</div>
+
+<hr style="border-color:#594438" class="mt-5">
+
+<div class="text-center">
+<p class="mb-0">© 2026 Brewed & Bowls. All rights reserved.</p>
+<small class="text-secondary">Designed with love ☕</small>
+</div>
+
+</div>
+</footer>
+
+
+<!-- WHATSAPP BUTTON -->
+
+<a href="https://wa.me/919975959596"
+class="whatsapp-float" target="_blank"
+aria-label="Chat on WhatsApp">
+<i class="bi bi-whatsapp"></i>
+</a>
+
+
+<!-- BOOTSTRAP JAVASCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* SCROLL ANIMATION */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const elements = document.querySelectorAll(
+        ".section-title, .section-tag, .review-card, .gallery-item, .experience-card, .menu-card, .about-box, .contact-box, .offer-content"
+    );
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if(entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        }, {threshold:0.12});
+
+        elements.forEach(function(element) {
+            element.classList.add("reveal");
+            observer.observe(element);
+        });
+
+    }
+
+    /* CLOSE MOBILE NAVBAR AFTER CLICK */
+
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            const menu = document.getElementById("navbarMenu");
+
+            if(menu.classList.contains("show")) {
+                bootstrap.Collapse.getOrCreateInstance(menu).hide();
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
